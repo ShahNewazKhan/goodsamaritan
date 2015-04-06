@@ -1,0 +1,545 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C93622D0-0E54-41AB-BDA3-E78EA8338C45}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>assn2</RootNamespace>
+    <AssemblyName>assn2</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.0.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.0.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.0.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.1.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.1.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.1.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.1.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LookupControllers\AbuserRelationshipController.cs" />
+    <Compile Include="Controllers\LookupControllers\AgeController.cs" />
+    <Compile Include="Controllers\LookupControllers\AssignedWorkerController.cs" />
+    <Compile Include="Controllers\LookupControllers\BadDateReportsController.cs" />
+    <Compile Include="Controllers\LookupControllers\CityofAssaultsController.cs" />
+    <Compile Include="Controllers\LookupControllers\CityofResidenceController.cs" />
+    <Compile Include="Controllers\LookupControllers\CrisesController.cs" />
+    <Compile Include="Controllers\LookupControllers\DrugfacilitatedAssaultController.cs" />
+    <Compile Include="Controllers\LookupControllers\DuplicateFileController.cs" />
+    <Compile Include="Controllers\LookupControllers\EthnicityController.cs" />
+    <Compile Include="Controllers\LookupControllers\EvidenceStoredController.cs" />
+    <Compile Include="Controllers\LookupControllers\FamilyViolenceFileController.cs" />
+    <Compile Include="Controllers\LookupControllers\FiscalYearController.cs" />
+    <Compile Include="Controllers\LookupControllers\HIVMedController.cs" />
+    <Compile Include="Controllers\LookupControllers\HospitalAttendedsController.cs" />
+    <Compile Include="Controllers\LookupControllers\IncidentController.cs" />
+    <Compile Include="Controllers\LookupControllers\MedicalOnlyController.cs" />
+    <Compile Include="Controllers\LookupControllers\MultiplePerpetratorController.cs" />
+    <Compile Include="Controllers\LookupControllers\PoliceAttendanceController.cs" />
+    <Compile Include="Controllers\LookupControllers\PoliceReportedController.cs" />
+    <Compile Include="Controllers\LookupControllers\ProgramController.cs" />
+    <Compile Include="Controllers\LookupControllers\ReferralContactController.cs" />
+    <Compile Include="Controllers\LookupControllers\ReferralSourceController.cs" />
+    <Compile Include="Controllers\LookupControllers\ReferredtoCBVSController.cs" />
+    <Compile Include="Controllers\LookupControllers\ReferringHospitalController.cs" />
+    <Compile Include="Controllers\LookupControllers\RepeatClientController.cs" />
+    <Compile Include="Controllers\LookupControllers\RiskLevelController.cs" />
+    <Compile Include="Controllers\LookupControllers\RiskStatusController.cs" />
+    <Compile Include="Controllers\LookupControllers\ServiceController.cs" />
+    <Compile Include="Controllers\LookupControllers\SexWorkExploitationController.cs" />
+    <Compile Include="Controllers\LookupControllers\SocialWorkAttendanceController.cs" />
+    <Compile Include="Controllers\LookupControllers\StatusofFileController.cs" />
+    <Compile Include="Controllers\LookupControllers\ThirdPartyReportController.cs" />
+    <Compile Include="Controllers\LookupControllers\VictimofIncidentController.cs" />
+    <Compile Include="Controllers\LookupControllers\VictimServicesAttendanceController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="DAL\GSContext.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502192310500_Initial create.cs" />
+    <Compile Include="Migrations\201502192310500_Initial create.Designer.cs">
+      <DependentUpon>201502192310500_Initial create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\IdentityMigrations\201502192338109_Identity.cs" />
+    <Compile Include="Migrations\IdentityMigrations\201502192338109_Identity.Designer.cs">
+      <DependentUpon>201502192338109_Identity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\IdentityMigrations\Configuration.cs" />
+    <Compile Include="Models\Lookups\AbuserRelationship.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Lookups\Age.cs" />
+    <Compile Include="Models\Lookups\AssignedWorker.cs" />
+    <Compile Include="Models\Lookups\BadDateReport.cs" />
+    <Compile Include="Models\Lookups\CityOfAssault.cs" />
+    <Compile Include="Models\Lookups\CityOfResidence.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Lookups\Crisis.cs" />
+    <Compile Include="Models\Lookups\DrugFacilitatedAssault.cs" />
+    <Compile Include="Models\Lookups\DuplicateFile.cs" />
+    <Compile Include="Models\Lookups\Ethnicity.cs" />
+    <Compile Include="Models\Lookups\EvidenceStored.cs" />
+    <Compile Include="Models\Lookups\FamilyViolenceFile.cs" />
+    <Compile Include="Models\Lookups\FiscalYear.cs" />
+    <Compile Include="Models\Lookups\HIVMeds.cs" />
+    <Compile Include="Models\Lookups\HospitalAttended.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Lookups\Incident.cs" />
+    <Compile Include="Models\Lookups\VictimofIncident.cs" />
+    <Compile Include="Models\Lookups\MedicalOnly.cs" />
+    <Compile Include="Models\Lookups\MultiplePerpetrators.cs" />
+    <Compile Include="Models\Lookups\PoliceAttendance.cs" />
+    <Compile Include="Models\Lookups\PoliceReported.cs" />
+    <Compile Include="Models\Lookups\Program.cs" />
+    <Compile Include="Models\Lookups\ReferralContact.cs" />
+    <Compile Include="Models\Lookups\ReferralSource.cs" />
+    <Compile Include="Models\Lookups\ReferredtoCBVS.cs" />
+    <Compile Include="Models\Lookups\ReferringHospital.cs" />
+    <Compile Include="Models\Lookups\RepeatClient.cs" />
+    <Compile Include="Models\Lookups\RiskLevel.cs" />
+    <Compile Include="Models\Lookups\RiskStatus.cs" />
+    <Compile Include="Models\Lookups\Service.cs" />
+    <Compile Include="Models\Lookups\SexWorkExploitation.cs" />
+    <Compile Include="Models\Lookups\SocialWorkAttendance.cs" />
+    <Compile Include="Models\Lookups\StatusOfFile.cs" />
+    <Compile Include="Models\Lookups\ThirdPartyReport.cs" />
+    <Compile Include="Models\Lookups\VictimServesAttendance.cs" />
+    <Compile Include="Models\SmartEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\scripts.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Client\Create.cshtml" />
+    <Content Include="Views\Client\Delete.cshtml" />
+    <Content Include="Views\Client\Details.cshtml" />
+    <Content Include="Views\Client\Edit.cshtml" />
+    <Content Include="Views\Client\Index.cshtml" />
+    <Content Include="Views\AbuserRelationship\Create.cshtml" />
+    <Content Include="Views\AbuserRelationship\Delete.cshtml" />
+    <Content Include="Views\AbuserRelationship\Details.cshtml" />
+    <Content Include="Views\AbuserRelationship\Edit.cshtml" />
+    <Content Include="Views\AbuserRelationship\Index.cshtml" />
+    <Content Include="Views\Age\Create.cshtml" />
+    <Content Include="Views\Age\Delete.cshtml" />
+    <Content Include="Views\Age\Details.cshtml" />
+    <Content Include="Views\Age\Edit.cshtml" />
+    <Content Include="Views\Age\Index.cshtml" />
+    <Content Include="Views\AssignedWorker\Create.cshtml" />
+    <Content Include="Views\AssignedWorker\Delete.cshtml" />
+    <Content Include="Views\AssignedWorker\Details.cshtml" />
+    <Content Include="Views\AssignedWorker\Edit.cshtml" />
+    <Content Include="Views\AssignedWorker\Index.cshtml" />
+    <Content Include="Views\BadDateReports\Create.cshtml" />
+    <Content Include="Views\BadDateReports\Delete.cshtml" />
+    <Content Include="Views\BadDateReports\Details.cshtml" />
+    <Content Include="Views\BadDateReports\Edit.cshtml" />
+    <Content Include="Views\BadDateReports\Index.cshtml" />
+    <Content Include="Views\CityofAssaults\Create.cshtml" />
+    <Content Include="Views\CityofAssaults\Delete.cshtml" />
+    <Content Include="Views\CityofAssaults\Details.cshtml" />
+    <Content Include="Views\CityofAssaults\Edit.cshtml" />
+    <Content Include="Views\CityofAssaults\Index.cshtml" />
+    <Content Include="Views\CityofResidence\Create.cshtml" />
+    <Content Include="Views\CityofResidence\Delete.cshtml" />
+    <Content Include="Views\CityofResidence\Details.cshtml" />
+    <Content Include="Views\CityofResidence\Edit.cshtml" />
+    <Content Include="Views\CityofResidence\Index.cshtml" />
+    <Content Include="Views\Crises\Create.cshtml" />
+    <Content Include="Views\Crises\Delete.cshtml" />
+    <Content Include="Views\Crises\Details.cshtml" />
+    <Content Include="Views\Crises\Edit.cshtml" />
+    <Content Include="Views\Crises\Index.cshtml" />
+    <Content Include="Views\DrugfacilitatedAssault\Create.cshtml" />
+    <Content Include="Views\DrugfacilitatedAssault\Delete.cshtml" />
+    <Content Include="Views\DrugfacilitatedAssault\Details.cshtml" />
+    <Content Include="Views\DrugfacilitatedAssault\Edit.cshtml" />
+    <Content Include="Views\DrugfacilitatedAssault\Index.cshtml" />
+    <Content Include="Views\DuplicateFile\Create.cshtml" />
+    <Content Include="Views\DuplicateFile\Delete.cshtml" />
+    <Content Include="Views\DuplicateFile\Details.cshtml" />
+    <Content Include="Views\DuplicateFile\Edit.cshtml" />
+    <Content Include="Views\DuplicateFile\Index.cshtml" />
+    <Content Include="Views\Ethnicity\Create.cshtml" />
+    <Content Include="Views\Ethnicity\Delete.cshtml" />
+    <Content Include="Views\Ethnicity\Details.cshtml" />
+    <Content Include="Views\Ethnicity\Edit.cshtml" />
+    <Content Include="Views\Ethnicity\Index.cshtml" />
+    <Content Include="Views\EvidenceStored\Create.cshtml" />
+    <Content Include="Views\EvidenceStored\Delete.cshtml" />
+    <Content Include="Views\EvidenceStored\Details.cshtml" />
+    <Content Include="Views\EvidenceStored\Edit.cshtml" />
+    <Content Include="Views\EvidenceStored\Index.cshtml" />
+    <Content Include="Views\FamilyViolenceFile\Create.cshtml" />
+    <Content Include="Views\FamilyViolenceFile\Delete.cshtml" />
+    <Content Include="Views\FamilyViolenceFile\Details.cshtml" />
+    <Content Include="Views\FamilyViolenceFile\Edit.cshtml" />
+    <Content Include="Views\FamilyViolenceFile\Index.cshtml" />
+    <Content Include="Views\FiscalYear\Create.cshtml" />
+    <Content Include="Views\FiscalYear\Delete.cshtml" />
+    <Content Include="Views\FiscalYear\Details.cshtml" />
+    <Content Include="Views\FiscalYear\Edit.cshtml" />
+    <Content Include="Views\FiscalYear\Index.cshtml" />
+    <Content Include="Views\HIVMed\Create.cshtml" />
+    <Content Include="Views\HIVMed\Delete.cshtml" />
+    <Content Include="Views\HIVMed\Details.cshtml" />
+    <Content Include="Views\HIVMed\Edit.cshtml" />
+    <Content Include="Views\HIVMed\Index.cshtml" />
+    <Content Include="Views\HospitalAttendeds\Create.cshtml" />
+    <Content Include="Views\HospitalAttendeds\Delete.cshtml" />
+    <Content Include="Views\HospitalAttendeds\Details.cshtml" />
+    <Content Include="Views\HospitalAttendeds\Edit.cshtml" />
+    <Content Include="Views\HospitalAttendeds\Index.cshtml" />
+    <Content Include="Views\Incident\Create.cshtml" />
+    <Content Include="Views\Incident\Delete.cshtml" />
+    <Content Include="Views\Incident\Details.cshtml" />
+    <Content Include="Views\Incident\Edit.cshtml" />
+    <Content Include="Views\Incident\Index.cshtml" />
+    <Content Include="Views\MedicalOnly\Create.cshtml" />
+    <Content Include="Views\MedicalOnly\Delete.cshtml" />
+    <Content Include="Views\MedicalOnly\Details.cshtml" />
+    <Content Include="Views\MedicalOnly\Edit.cshtml" />
+    <Content Include="Views\MedicalOnly\Index.cshtml" />
+    <Content Include="Views\MultiplePerpetrator\Create.cshtml" />
+    <Content Include="Views\MultiplePerpetrator\Delete.cshtml" />
+    <Content Include="Views\MultiplePerpetrator\Details.cshtml" />
+    <Content Include="Views\MultiplePerpetrator\Edit.cshtml" />
+    <Content Include="Views\MultiplePerpetrator\Index.cshtml" />
+    <Content Include="Views\PoliceAttendance\Create.cshtml" />
+    <Content Include="Views\PoliceAttendance\Delete.cshtml" />
+    <Content Include="Views\PoliceAttendance\Details.cshtml" />
+    <Content Include="Views\PoliceAttendance\Edit.cshtml" />
+    <Content Include="Views\PoliceAttendance\Index.cshtml" />
+    <Content Include="Views\PoliceReported\Create.cshtml" />
+    <Content Include="Views\PoliceReported\Delete.cshtml" />
+    <Content Include="Views\PoliceReported\Details.cshtml" />
+    <Content Include="Views\PoliceReported\Edit.cshtml" />
+    <Content Include="Views\PoliceReported\Index.cshtml" />
+    <Content Include="Views\Program\Create.cshtml" />
+    <Content Include="Views\Program\Delete.cshtml" />
+    <Content Include="Views\Program\Details.cshtml" />
+    <Content Include="Views\Program\Edit.cshtml" />
+    <Content Include="Views\Program\Index.cshtml" />
+    <Content Include="Views\ReferralContact\Create.cshtml" />
+    <Content Include="Views\ReferralContact\Delete.cshtml" />
+    <Content Include="Views\ReferralContact\Details.cshtml" />
+    <Content Include="Views\ReferralContact\Edit.cshtml" />
+    <Content Include="Views\ReferralContact\Index.cshtml" />
+    <Content Include="Views\ReferralSource\Create.cshtml" />
+    <Content Include="Views\ReferralSource\Delete.cshtml" />
+    <Content Include="Views\ReferralSource\Details.cshtml" />
+    <Content Include="Views\ReferralSource\Edit.cshtml" />
+    <Content Include="Views\ReferralSource\Index.cshtml" />
+    <Content Include="Views\ReferredtoCBVS\Create.cshtml" />
+    <Content Include="Views\ReferredtoCBVS\Delete.cshtml" />
+    <Content Include="Views\ReferredtoCBVS\Details.cshtml" />
+    <Content Include="Views\ReferredtoCBVS\Edit.cshtml" />
+    <Content Include="Views\ReferredtoCBVS\Index.cshtml" />
+    <Content Include="Views\ReferringHospital\Create.cshtml" />
+    <Content Include="Views\ReferringHospital\Delete.cshtml" />
+    <Content Include="Views\ReferringHospital\Details.cshtml" />
+    <Content Include="Views\ReferringHospital\Edit.cshtml" />
+    <Content Include="Views\ReferringHospital\Index.cshtml" />
+    <Content Include="Views\RepeatClient\Create.cshtml" />
+    <Content Include="Views\RepeatClient\Delete.cshtml" />
+    <Content Include="Views\RepeatClient\Details.cshtml" />
+    <Content Include="Views\RepeatClient\Edit.cshtml" />
+    <Content Include="Views\RepeatClient\Index.cshtml" />
+    <Content Include="Views\RiskLevel\Create.cshtml" />
+    <Content Include="Views\RiskLevel\Delete.cshtml" />
+    <Content Include="Views\RiskLevel\Details.cshtml" />
+    <Content Include="Views\RiskLevel\Edit.cshtml" />
+    <Content Include="Views\RiskLevel\Index.cshtml" />
+    <Content Include="Views\RiskStatus\Create.cshtml" />
+    <Content Include="Views\RiskStatus\Delete.cshtml" />
+    <Content Include="Views\RiskStatus\Details.cshtml" />
+    <Content Include="Views\RiskStatus\Edit.cshtml" />
+    <Content Include="Views\RiskStatus\Index.cshtml" />
+    <Content Include="Views\Service\Create.cshtml" />
+    <Content Include="Views\Service\Delete.cshtml" />
+    <Content Include="Views\Service\Details.cshtml" />
+    <Content Include="Views\Service\Edit.cshtml" />
+    <Content Include="Views\Service\Index.cshtml" />
+    <Content Include="Views\SexWorkExploitation\Create.cshtml" />
+    <Content Include="Views\SexWorkExploitation\Delete.cshtml" />
+    <Content Include="Views\SexWorkExploitation\Details.cshtml" />
+    <Content Include="Views\SexWorkExploitation\Edit.cshtml" />
+    <Content Include="Views\SexWorkExploitation\Index.cshtml" />
+    <Content Include="Views\SocialWorkAttendance\Create.cshtml" />
+    <Content Include="Views\SocialWorkAttendance\Delete.cshtml" />
+    <Content Include="Views\SocialWorkAttendance\Details.cshtml" />
+    <Content Include="Views\SocialWorkAttendance\Edit.cshtml" />
+    <Content Include="Views\SocialWorkAttendance\Index.cshtml" />
+    <Content Include="Views\StatusofFile\Create.cshtml" />
+    <Content Include="Views\StatusofFile\Delete.cshtml" />
+    <Content Include="Views\StatusofFile\Details.cshtml" />
+    <Content Include="Views\StatusofFile\Edit.cshtml" />
+    <Content Include="Views\StatusofFile\Index.cshtml" />
+    <Content Include="Views\ThirdPartyReport\Create.cshtml" />
+    <Content Include="Views\ThirdPartyReport\Delete.cshtml" />
+    <Content Include="Views\ThirdPartyReport\Details.cshtml" />
+    <Content Include="Views\ThirdPartyReport\Edit.cshtml" />
+    <Content Include="Views\ThirdPartyReport\Index.cshtml" />
+    <Content Include="Views\VictimofIncident\Create.cshtml" />
+    <Content Include="Views\VictimofIncident\Delete.cshtml" />
+    <Content Include="Views\VictimofIncident\Details.cshtml" />
+    <Content Include="Views\VictimofIncident\Edit.cshtml" />
+    <Content Include="Views\VictimofIncident\Index.cshtml" />
+    <Content Include="Views\VictimServicesAttendance\Create.cshtml" />
+    <Content Include="Views\VictimServicesAttendance\Delete.cshtml" />
+    <Content Include="Views\VictimServicesAttendance\Details.cshtml" />
+    <Content Include="Views\VictimServicesAttendance\Edit.cshtml" />
+    <Content Include="Views\VictimServicesAttendance\Index.cshtml" />
+    <Content Include="Views\Shared\_DropdownPartial.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\RoleIndex.cshtml" />
+    <Content Include="Views\Users\RoleAddToUser.cshtml" />
+    <Content Include="Views\Users\RoleCreate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201502192310500_Initial create.resx">
+      <DependentUpon>201502192310500_Initial create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\IdentityMigrations\201502192338109_Identity.resx">
+      <DependentUpon>201502192338109_Identity.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10397</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:10397/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

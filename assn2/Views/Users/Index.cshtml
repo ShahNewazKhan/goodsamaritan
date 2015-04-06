@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Users
+        </th>
+        <th></th>
+    </tr>
+    @{var i = 0;}
+    @foreach( var u in ViewBag.UserNames )
+    {
+        
+        <tr>
+            <td>
+                @u
+            </td>
+            <td>
+                @Html.ActionLink("Change Role", "Edit", new { id = ViewBag.UserIds[i] })
+            </td>
+        </tr>
+        
+        i++;
+    }
+
+</table>
