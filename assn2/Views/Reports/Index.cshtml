@@ -3,6 +3,19 @@
 }
 
 <div ng-app="reportsAPI" ng-controller="getClients">
-    <h2>TESTING!</h2>
-    <p>{{test}}</p>
+    <div >
+        <form ng-app="reportsAPI" ng-controller="getClients" name="addForm">
+            <p>
+                First Name<br>
+                <input type="text" name="name" ng-model="firstName" required>
+            </p>
+            <p>
+                Surname<br>
+                <input type="text" name="desc" ng-model="surname" required>
+            </p>
+            <p>
+                <input type="submit" value="Add Client" class="button success round" ng-click="addBtn()">
+            </p>
+        </form>
+    </div>
 </div>

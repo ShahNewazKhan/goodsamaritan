@@ -20,9 +20,18 @@ app.config(['$httpProvider', function ($httpProvider) {
 }]);
 
 app.controller('getClients',
-function ($scope) {
+function ($scope, $http) {
 
-    $scope.test = "Hello world";
+    $scope.addBtn = function () {
+        $http.post("http://localhost:10397/api/ClientAPI",
+			{
+			    'firstName': $scope.firstName,
+			    'surname': $scope.surname
+			})
+		.success(function (response) {
+		    console.log(response);
+		});
+    };
     
 });
 
