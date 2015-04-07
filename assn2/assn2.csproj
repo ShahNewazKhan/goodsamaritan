@@ -209,7 +209,7 @@
     <Compile Include="Controllers\LookupControllers\ThirdPartyReportController.cs" />
     <Compile Include="Controllers\LookupControllers\VictimofIncidentController.cs" />
     <Compile Include="Controllers\LookupControllers\VictimServicesAttendanceController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DAL\GSContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -1281,6 +1281,7 @@
     <Content Include="Views\Users\RoleAddToUser.cshtml" />
     <Content Include="Views\Users\RoleCreate.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\Reports\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
