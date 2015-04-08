@@ -4,21 +4,30 @@
 
 <div ng-app="reportsAPI">
     <div >
-        <form ng-app="reportsAPI" ng-controller="getCities" name="addForm">
+        <form ng-app="reportsAPI" ng-controller="getSmartEntities" name="addForm">
             <p>
-                First Name<br>
-                <input type="text" name="name" ng-model="firstName" required>
+                Fiscal Year<br>
+                <select ng-model="defaultYear">
+                    <option ng-repeat="year in years" value="{{year.Value}}">{{year.Value}}</option>
+                </select>
             </p>
+            
             <p>
-                Surname<br>
-                <input type="text" name="desc" ng-model="surname" required>
+                Month<br>
+                <input type="text" name="desc" ng-model="month" required>
             </p>
+            
+            <p>
+                City<br>
+                <select ng-model="defaultCity">
+                    <option ng-repeat="city in Cities" value="{{city.Value}}">{{city.Value}}</option>
+                </select>
+            </p>
+
             <p>
                 <input type="submit" value="Add Client" class="button success round" ng-click="addBtn()">
             </p>
         </form>
     </div>
-    <div ng-controller="getSmartEntities" >
-        {{test}}
-    </div>
+   
 </div>

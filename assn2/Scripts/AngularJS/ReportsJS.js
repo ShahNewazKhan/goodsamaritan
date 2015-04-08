@@ -21,7 +21,7 @@ app.config(['$httpProvider', function ($httpProvider) {
 
 app.controller('getCities',
 function ($scope, $http) {
-    
+    console.log("GetCities");
     $scope.addBtn = function () {
         $http.get("http://localhost:10397/api/CityofAssaultAPI")
 		.success(function (response) {
@@ -34,16 +34,22 @@ function ($scope, $http) {
 app.controller('getSmartEntities',
 function ($scope, $http) {
 
-    //$scope.getSmart = function () {
-    //    $http.get("http://localhost:10397/api/CityofAssaultAPI")
-	//	.success(function (response) {
-	//	    console.log(response);
-	//	}).error(function (data, status, headers, config) {
-	//	    console.log(data);
-	//	});
-    //};
+    console.log("GetSmart");
 
-    //$scope.getSmart();
+    $scope.getsmart = function () {
+        $http.get("http://localhost:10397/api/cityofassaultapi")
+		.success(function (response) {
+
+		    console.log(response);
+		    $scope.Cities = response;
+		    $scope.defaultCity = response[1]["Value"];
+
+		}).error(function (data, status, headers, config) {
+		    console.log(data);
+		});
+    };
+
+    $scope.getsmart();
 });
 
 
