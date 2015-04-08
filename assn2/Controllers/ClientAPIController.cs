@@ -19,9 +19,9 @@ namespace assn2.Controllers
         private GSContext db = new GSContext();
 
         // GET: api/ClientAPI
-        public IQueryable<Client> GetClients()
+        public List<Client> GetClients()
         {
-            return db.Clients;
+            return db.Clients.ToList();
         }
 
         // GET: api/ClientAPI/5
