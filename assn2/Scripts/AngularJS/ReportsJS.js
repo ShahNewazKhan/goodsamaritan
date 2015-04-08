@@ -21,8 +21,10 @@ app.config(['$httpProvider', function ($httpProvider) {
 
 app.controller('getClients',
 function ($scope, $http) {
-
+    
     $scope.addBtn = function () {
+
+        console.log("Adding Client");
         $http.post("http://localhost:10397/api/ClientAPI",
 			{
 			    'firstName': $scope.firstName,

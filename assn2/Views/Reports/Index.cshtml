@@ -2,7 +2,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div ng-app="reportsAPI" ng-controller="getClients">
+<div ng-app="reportsAPI">
     <div >
         <form ng-app="reportsAPI" ng-controller="getClients" name="addForm">
             <p>
@@ -17,5 +17,8 @@
                 <input type="submit" value="Add Client" class="button success round" ng-click="addBtn()">
             </p>
         </form>
+    </div>
+    <div ng-controller="getSmartEntities">
+        {{test}}
     </div>
 </div>

@@ -238,6 +238,7 @@
     <Compile Include="Controllers\APIControllers\SMART\ThirdPartyReportsController.cs" />
     <Compile Include="Controllers\APIControllers\SMART\VictimServicesAttendancesController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\DataEntryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LookupControllers\AbuserRelationshipController.cs" />
     <Compile Include="Controllers\LookupControllers\AgeController.cs" />
@@ -1370,6 +1371,7 @@
     <Content Include="Views\Users\RoleCreate.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\DataEntry\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
