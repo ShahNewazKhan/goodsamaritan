@@ -19,15 +19,11 @@ app.config(['$httpProvider', function ($httpProvider) {
     });
 }]);
 
-app.controller('getClients',
+app.controller('getCities',
 function ($scope, $http) {
     
     $scope.addBtn = function () {
-        $http.post("http://localhost:10397/api/ClientAPI",
-			{
-			    'firstName': $scope.firstName,
-			    'surname': $scope.surname
-			})
+        $http.get("http://localhost:10397/api/CityofAssaultAPI")
 		.success(function (response) {
 		    console.log(response);
 		});
@@ -36,17 +32,18 @@ function ($scope, $http) {
 });
 
 app.controller('getSmartEntities',
-function ($scope, http) {
+function ($scope, $http) {
 
-    //$scope.getEntititiesFNC = function () {
-        
-    //    $http.get("http://localhost:10397/api/BadDateReports")
+    //$scope.getSmart = function () {
+    //    $http.get("http://localhost:10397/api/CityofAssaultAPI")
 	//	.success(function (response) {
 	//	    console.log(response);
-	//	    console.log("Recieved Smart Entities");
+	//	}).error(function (data, status, headers, config) {
+	//	    console.log(data);
 	//	});
     //};
 
-    //$scope.getEntititiesFNC();
-
+    //$scope.getSmart();
 });
+
+
