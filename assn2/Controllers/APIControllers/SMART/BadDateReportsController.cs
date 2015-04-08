@@ -19,9 +19,9 @@ namespace assn2.Controllers.APIControllers.SMART
         private GSContext db = new GSContext();
 
         // GET: api/BadDateReports
-        public List<BadDateReport> GetBadDateReport()
+        public IQueryable<BadDateReport> GetBadDateReport()
         {
-            return db.BadDateReport.ToList();
+            return db.BadDateReport;
         }
 
         // GET: api/BadDateReports/5

@@ -23,8 +23,6 @@ app.controller('getClients',
 function ($scope, $http) {
     
     $scope.addBtn = function () {
-
-        console.log("Adding Client");
         $http.post("http://localhost:10397/api/ClientAPI",
 			{
 			    'firstName': $scope.firstName,
@@ -37,3 +35,18 @@ function ($scope, $http) {
     
 });
 
+app.controller('getSmartEntities',
+function ($scope, http) {
+
+    //$scope.getEntititiesFNC = function () {
+        
+    //    $http.get("http://localhost:10397/api/BadDateReports")
+	//	.success(function (response) {
+	//	    console.log(response);
+	//	    console.log("Recieved Smart Entities");
+	//	});
+    //};
+
+    //$scope.getEntititiesFNC();
+
+});
