@@ -22,12 +22,7 @@ app.config(['$httpProvider', function ($httpProvider) {
 app.controller('getCities',
 function ($scope, $http) {
     console.log("GetCities");
-    $scope.addBtn = function () {
-        $http.get("http://localhost:10397/api/CityofAssaultAPI")
-		.success(function (response) {
-		    console.log(response);
-		});
-    };
+    
     
 });
 
@@ -84,11 +79,27 @@ function ($scope, $http) {
 
 		});
 
+        $http.get("http://localhost:10397/api/AssignedWorkers")
+		.success(function (response) {
+
+		    $scope.assignedWorkers = response;
+		    $scope.defaultAssignedWorker = response[1]["Value"];
+
+		});
+
         $http.get("http://localhost:10397/api/ReferralSources")
 		.success(function (response) {
 
 		    $scope.referralSources = response;
 		    $scope.defaultReferralSource = response[1]["Value"];
+
+		});
+
+        $http.get("http://localhost:10397/api/ReferralContacts")
+		.success(function (response) {
+
+		    $scope.referralContacts = response;
+		    $scope.defaultReferralContact = response[1]["Value"];
 
 		});
 
@@ -112,15 +123,55 @@ function ($scope, $http) {
        .success(function (response) {
 
            $scope.victimOfIncidents = response;
-           $scope.defaultVictimeOfIncident = response[1]["Value"];
+           $scope.defaultVictimOfIncident = response[1]["Value"];
 
        });
 
         $http.get("http://localhost:10397/api/FamilyViolenceFiles")
        .success(function (response) {
 
-           $scope.family = response;
-           $scope.defaultVictimeOfIncident = response[1]["Value"];
+           $scope.familyViolenceFiles = response;
+           $scope.defaultfamilyViolenceFile = response[1]["Value"];
+
+       });
+
+        $http.get("http://localhost:10397/api/Ethnicities")
+       .success(function (response) {
+
+           $scope.ethnicities = response;
+           $scope.defaultEthnicity = response[1]["Value"];
+
+       });
+
+        $http.get("http://localhost:10397/api/Ages")
+       .success(function (response) {
+
+           $scope.ages = response;
+           $scope.defaultAge = response[1]["Value"];
+
+       });
+
+        $http.get("http://localhost:10397/api/RepeatClients")
+       .success(function (response) {
+
+           $scope.repeatClients = response;
+           $scope.defaultRepeatClient = response[1]["Value"];
+
+       });
+
+        $http.get("http://localhost:10397/api/StatusofFiles")
+       .success(function (response) {
+
+           $scope.statusOfFiles = response;
+           $scope.defaultStatusOfFile = response[1]["Value"];
+
+       });
+
+        $http.get("http://localhost:10397/api/DuplicateFiles")
+       .success(function (response) {
+
+           $scope.duplicateFiles = response;
+           $scope.defaultDuplicateFiles = response[1]["Value"];
 
        });
 
@@ -135,6 +186,55 @@ function ($scope, $http) {
     };
 
     $scope.getsmart();
+
+    $scope.addBtn = function () {
+
+        console.log("ADDING CLIENT");
+
+        $http.post("http://localhost:10397/api/ClientAPI",
+            {
+                'fiscalYear': $scope.defaultYear,
+                'month': $scope.month,
+                'day': $scope.day,
+                'surname': $scope.surname,
+                'firstname': $scope.firstname,
+                'policeFileNum': $scope.policeFile,
+                'courtFileNum': $scope.courtFile,
+                'SWCFileNum': $scope.swcFile,
+                'RiskLevel': $scope.defaultRiskLevels,
+                'Crisis': $scope.defaultCrises,
+                'Service': $scope.defaultService,
+                'Program': $scope.defaultProgram,
+                'RiskAssesmentAssignee': $scope.riskAssesmentAssignedTo,
+                'RiskStatus': $scope.defaultRiskStatus,
+                "AssignedWorker": $scope.defaultAssignedWorker,
+                "ReferralSource": $scope.defaultReferralSource,
+                "ReferralContact": $scope.defaultReferralContact,
+                "incident": $scope.defaultIncident,
+                "AbuserName": $scope.abuserName,
+                "AbuserRelationship": $scope.defaultAbuserRelationship,
+                "VictimofIncident": $scope.defaultVictimOfIncident,
+                "FamilyViolenceFile": $scope.defaultfamilyViolenceFile,
+                "gender": $scope.gender,
+                "Ethnicity": $scope.defaultEthnicity,
+                "Age": $scope.defaultAge,
+                "RepeatClient": $scope.defaultRepeatClient,
+                "DuplicateFile": $scope.defaultDuplicateFiles,
+                "numToddler": $scope.numChild6,
+                "numChildren": $scope.numChild7,
+                "numYouth": $scope.numChild13,
+                "StatusofFile": $scope.defaultStatusOfFile,
+                "dateLastTransferred": "2015-04-08T20:01:20.8030914-07:00",
+                "dateClosed": "2015-04-08T20:01:20.8030914-07:00",
+                "dateReOpened": "2015-04-08T20:01:20.8030914-07:00"
+            }
+            )
+		.success(function (response) {
+		    console.log(response);
+		}).error(function (response){
+		    console.log(response);
+		});
+    };
 });
 
 

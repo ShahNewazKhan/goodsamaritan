@@ -361,3 +361,4 @@ H:\Desktop\goodsamaritan\assn2\obj\Debug\assn2.Migrations.IdentityMigrations.Ide
 H:\Desktop\goodsamaritan\assn2\obj\Debug\assn2.csproj.GenerateResource.Cache
 H:\Desktop\goodsamaritan\assn2\obj\Debug\assn2.dll
 H:\Desktop\goodsamaritan\assn2\obj\Debug\assn2.pdb
+H:\Desktop\goodsamaritan\assn2\obj\Debug\assn2.csprojResolveAssemblyReference.cache
