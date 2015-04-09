@@ -2,20 +2,221 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div ng-app="reportsAPI" ng-controller="getClients">
-    <div >
-        <form ng-app="reportsAPI" ng-controller="getClients" name="addForm">
+<div ng-app="reportsAPI">
+    <div>
+        <form ng-app="reportsAPI" ng-controller="getSmartEntities" name="addForm">
+            <p>
+                Fiscal Year<br>
+                <select ng-model="defaultYear">
+                    <option ng-repeat="year in years" value="{{year.Value}}">{{year.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Month<br>
+                <input type="text" ng-model="month">
+            </p>
+
+            <p>
+                Day<br>
+                <input type="text" ng-model="day">
+            </p>
+
+            <p>
+                Sur Name<br>
+                <input type="text" ng-model="surname">
+            </p>
+
             <p>
                 First Name<br>
-                <input type="text" name="name" ng-model="firstName" required>
+                <input type="text" ng-model="firstname">
             </p>
+
             <p>
-                Surname<br>
-                <input type="text" name="desc" ng-model="surname" required>
+                Police File Number<br>
+                <input type="text" ng-model="policeFile">
             </p>
+
+            <p>
+                Court File Number<br>
+                <input type="text" ng-model="courtFile">
+            </p>
+
+            <p>
+                SWC file Number<br>
+                <input type="text" ng-model="swcFile">
+            </p>
+
+            <p>
+                Risk Levels<br>
+                <select ng-model="defaultRiskLevels">
+                    <option ng-repeat="risk in riskLevels" value="{{risk.Value}}">{{risk.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Crises<br>
+                <select ng-model="defaultCrises">
+                    <option ng-repeat="crisis in crises" value="{{crisis.Value}}">{{crisis.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Service<br>
+                <select ng-model="defaultService">
+                    <option ng-repeat="service in services" value="{{service.Value}}">{{service.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Program<br>
+                <select ng-model="defaultProgram">
+                    <option ng-repeat="program in programs" value="{{program.Value}}">{{program.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Risk Assesment assigned to<br>
+                <input type="text" ng-model="riskAssesmentAssignedTo">
+            </p>
+
+            <p>
+                Risk Status<br>
+                <select ng-model="defaultRiskStatus">
+                    <option ng-repeat="status in riskStatuses" value="{{status.Value}}">{{status.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Assigned Worker<br>
+                <select ng-model="defaultAssignedWorker">
+                    <option ng-repeat="worker in assignedWorkers" value="{{worker.Value}}">{{worker.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Referral Source<br>
+                <select ng-model="defaultReferralSource">
+                    <option ng-repeat="source in referralSources" value="{{source.Value}}">{{source.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Referral Contact<br>
+                <select ng-model="defaultReferralContact">
+                    <option ng-repeat="contact in referralContacts" value="{{contact.Value}}">{{contact.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Incident<br>
+                <select ng-model="defaultIncident">
+                    <option ng-repeat="incident in incidents" value="{{incident.Value}}">{{incident.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Abuser Surname / Firstname<br>
+                <input type="text" ng-model="abuserName">
+            </p>
+
+            <p>
+                Abuser Relationship<br>
+                <select ng-model="defaultAbuserRelationship">
+                    <option ng-repeat="abuser in abuserRelationships" value="{{abuser.Value}}">{{abuser.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Victim of Incident<br>
+                <select ng-model="defaultVictimOfIncident">
+                    <option ng-repeat="victim in victimOfIncidents" value="{{victim.Value}}">{{victim.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Family Violence File<br>
+                <select ng-model="defaultFamilyViolenceFile">
+                    <option ng-repeat="file in familyViolenceFiles" value="{{file.Value}}">{{file.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Gender<br>
+                <input type="text" ng-model="gender">
+            </p>
+
+            <p>
+                Ethnicity<br>
+                <select ng-model="defaultEthnicity">
+                    <option ng-repeat="e in ethnicities " value="{{e.Value}}">{{e.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Age<br>
+                <select ng-model="defaultAge">
+                    <option ng-repeat="a in ages " value="{{a.Value}}">{{a.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Repeat Client<br>
+                <select ng-model="defaultRepeatClient">
+                    <option ng-repeat="client in repeatClients " value="{{client.Value}}">{{client.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Duplicate File<br>
+                <select ng-model="defaultDuplicateFile">
+                    <option ng-repeat="file in duplicateFiles " value="{{file.Value}}">{{file.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Number of Children 0 - 6<br>
+                <input type="text" ng-model="numChild6">
+            </p>
+
+            <p>
+                Number of Children 7 - 12<br>
+                <input type="text" ng-model="numChild7">
+            </p>
+
+            <p>
+                Number of Children 13 - 18<br>
+                <input type="text" ng-model="numChild13">
+            </p>
+
+            <p>
+                Status of file<br>
+                <select ng-model="defaultStatusofFile">
+                    <option ng-repeat="file in statusOfFiles " value="{{file.Value}}">{{file.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Date Last Transferred<br>
+                <input type="text" ng-model="dateTransfered">
+            </p>
+
+            <p>
+                Date Closed<br>
+                <input type="text" ng-model="dateClosed">
+            </p>
+
+            <p>
+                Date Re-opened<br>
+                <input type="text" ng-model="dateReOpened">
+            </p>
+
             <p>
                 <input type="submit" value="Add Client" class="button success round" ng-click="addBtn()">
             </p>
+
+
         </form>
     </div>
+
 </div>

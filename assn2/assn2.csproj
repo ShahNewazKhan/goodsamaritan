@@ -202,9 +202,43 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CityofAssaultAPIController.cs" />
-    <Compile Include="Controllers\ClientAPIController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\AbuserRelationshipsController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\AgesController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\AssignedWorkersController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\CrisesController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\DuplicateFilesController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\EthnicitiesController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\FamilyViolenceFilesController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\FiscalYearsController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\IncidentsController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\ProgramsController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\ReferralContactsController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\ReferralSourcesController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\RepeatClientsController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\RiskLevelsController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\RiskStatusesController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\ServicesController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\StatusofFilesController.cs" />
+    <Compile Include="Controllers\APIControllers\Client\VictimofIncidentsController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\BadDateReportsController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\CityofAssaultAPIController.cs" />
+    <Compile Include="Controllers\APIControllers\ClientAPIController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\CityofResidencesController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\DrugfacilitatedAssaultsController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\EvidenceStoredsController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\HIVMedsController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\MedicalOnliesController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\MultiplePerpetratorsController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\PoliceAttendancesController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\PoliceReportedsController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\ReferredtoCBVSController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\ReferringHospitalsController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\SexWorkExploitationsController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\SocialWorkAttendancesController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\ThirdPartyReportsController.cs" />
+    <Compile Include="Controllers\APIControllers\SMART\VictimServicesAttendancesController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\DataEntryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LookupControllers\AbuserRelationshipController.cs" />
     <Compile Include="Controllers\LookupControllers\AgeController.cs" />
@@ -250,6 +284,10 @@
     <Compile Include="Migrations\201502192310500_Initial create.cs" />
     <Compile Include="Migrations\201502192310500_Initial create.Designer.cs">
       <DependentUpon>201502192310500_Initial create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201504090354509_NOREGEX.cs" />
+    <Compile Include="Migrations\201504090354509_NOREGEX.Designer.cs">
+      <DependentUpon>201504090354509_NOREGEX.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigrations\201502192338109_Identity.cs" />
@@ -301,6 +339,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\background.jpg" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -329,6 +368,7 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\AngularJS\DataEntryController.js" />
     <Content Include="Scripts\AngularJS\ReportsJS.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\errors.json" />
@@ -1336,6 +1376,7 @@
     <Content Include="Views\Users\RoleCreate.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Reports\Index.cshtml" />
+    <Content Include="Views\DataEntry\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1350,6 +1391,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201502192310500_Initial create.resx">
       <DependentUpon>201502192310500_Initial create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504090354509_NOREGEX.resx">
+      <DependentUpon>201504090354509_NOREGEX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\IdentityMigrations\201502192338109_Identity.resx">
       <DependentUpon>201502192338109_Identity.cs</DependentUpon>

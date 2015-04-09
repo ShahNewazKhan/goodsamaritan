@@ -20,7 +20,6 @@ namespace assn2.Models
         public string surname { get; set; }
         public string firstName { get; set; }
         
-        [RegularExpression("/\\d{2}-\\d{4}/")]
         public string policeFileNum { get; set; }
         public int courtFileNum { get; set; }
         public int SWCFileNum { get; set; }
