@@ -285,6 +285,10 @@
     <Compile Include="Migrations\201502192310500_Initial create.Designer.cs">
       <DependentUpon>201502192310500_Initial create.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504090354509_NOREGEX.cs" />
+    <Compile Include="Migrations\201504090354509_NOREGEX.Designer.cs">
+      <DependentUpon>201504090354509_NOREGEX.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Migrations\IdentityMigrations\201502192338109_Identity.cs" />
     <Compile Include="Migrations\IdentityMigrations\201502192338109_Identity.Designer.cs">
@@ -1387,6 +1391,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201502192310500_Initial create.resx">
       <DependentUpon>201502192310500_Initial create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504090354509_NOREGEX.resx">
+      <DependentUpon>201504090354509_NOREGEX.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\IdentityMigrations\201502192338109_Identity.resx">
       <DependentUpon>201502192338109_Identity.cs</DependentUpon>
