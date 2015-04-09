@@ -115,6 +115,11 @@ namespace assn2.Controllers
                       where c.month == month
                       select c;
 
+            foreach( Client c in qry )
+            {
+                clients.Add(c);
+            }
+
             return clients;
         }
 
