@@ -7,12 +7,27 @@
     <h2>Good Samaritan</h2>
 </div>
 
+<div class="row">
+
 @if(!Request.IsAuthenticated)
 {
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Login to get started.</h2>
-            <p><a class="btn btn-default" href="/Account/login">Login</a></p>
-        </div>
+    <div class="col-md-6">
+        <h2>Login to get started.</h2>
+        <p><a class="btn btn-default" href="/Account/login">Login</a></p>
     </div>
 }
+else
+{
+    <div class="col-md-6">
+        <h2>Welcome you are now logged in as @User.Identity.Name</h2>
+    </div>
+}
+@if( User.IsInRole("Report") )
+{
+    <div class="col-md-6">
+        <h2>Get Report</h2>
+        <p><a href="/reports" class="btn btn-default">Reports</a></p>
+    </div>
+}
+
+</div>

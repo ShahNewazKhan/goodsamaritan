@@ -425,3 +425,4 @@ C:\Users\AARIN\Desktop\ASP\goodsamaritan\assn2\obj\Debug\assn2.Migrations.Identi
 C:\Users\AARIN\Desktop\ASP\goodsamaritan\assn2\obj\Debug\assn2.csproj.GenerateResource.Cache
 C:\Users\AARIN\Desktop\ASP\goodsamaritan\assn2\obj\Debug\assn2.dll
 C:\Users\AARIN\Desktop\ASP\goodsamaritan\assn2\obj\Debug\assn2.pdb
+C:\Users\AARIN\Desktop\ASP\goodsamaritan\assn2\obj\Debug\assn2.Migrations.NOREGEX.resources
