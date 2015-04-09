@@ -15,14 +15,17 @@ namespace assn2.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "ASP.net Assignment 3";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.name1 = "Aarin Smith / A00857633";
+            ViewBag.name2 = "Shahnewaz Khan / A00261182";
+            ViewBag.email1 = "aarinsmith@gmail.com";
+            ViewBag.email2 = "shahnewazkhan@gmail.com";
 
             return View();
         }
