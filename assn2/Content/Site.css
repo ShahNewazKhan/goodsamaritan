@@ -258,3 +258,8 @@ section {
 	min-height:270px;
     max-height:270px;
 }
+
+.jumbotron
+{
+    background: url("background.jpg") no-repeat center center;
+}
