@@ -27,15 +27,23 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Reports", "Index", "Reports")</li>
+                    @if (User.IsInRole("Administrator"))
+                    {
+                        <li>@Html.ActionLink("Data Entry", "Index", "DataEntry")</li>
+                    }
+                    @if (User.IsInRole("Reporter"))
+                    {
+                        <li>@Html.ActionLink("Reports", "Index", "Reports")</li>
+                    }
                     @Html.Partial("_DropdownPartial")
-                    @if( User.IsInRole("Administrator") )
+                    @if (User.IsInRole("Administrator"))
                     {
                         <li>@Html.ActionLink("Manage Roles", "RoleIndex", "Users")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
+
         </div>
     </div>
     <div class="container body-content">
