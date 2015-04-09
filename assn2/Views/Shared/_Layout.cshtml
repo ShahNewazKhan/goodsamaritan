@@ -31,7 +31,7 @@
                     {
                         <li>@Html.ActionLink("Data Entry", "Index", "DataEntry")</li>
                     }
-                    @if ( User.IsInRole("Administrator") || User.IsInRole("Reporter") )
+                    @if ( User.IsInRole("Administrator") || User.IsInRole("Report") )
                     {
                         <li>@Html.ActionLink("Reports", "Index", "Reports")</li>
                     }
@@ -50,7 +50,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p><span class="glyphicon glyphicon-eye-open"></span> @DateTime.Now.Year - COMP4976 Assn 3 / The Good Samaritan <span class="glyphicon glyphicon-eye-open"></span></p>
         </footer>
     </div>
 
