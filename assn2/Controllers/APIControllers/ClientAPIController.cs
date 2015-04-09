@@ -110,6 +110,7 @@ namespace assn2.Controllers
         {
             List<Client> clients = new List<Client>();
             
+            // Initial DB query to get all clients for given year / month
             var qry = from c in db.Clients
                       where c.fisYear.Value == year
                       where c.month == month
@@ -119,6 +120,74 @@ namespace assn2.Controllers
             {
                 clients.Add(c);
             }
+
+            // Get counts for open / closed / reopened files
+            var open = (from o in clients
+                        where o.StatusofFile.Value == "Open"
+                        select o).Count();
+
+            var closed = (from o in clients
+                          where o.StatusofFile.Value == "Closed"
+                          select o).Count();
+
+            var reopened = (from o in clients
+                            where o.StatusofFile.Value == "Reopened"
+                            select o).Count();
+
+            // Get count of program type for report.
+            var crisis = (from o in clients
+                          where o.Program.Value == "Crisis"
+                          select o).Count();
+
+            var court = (from o in clients
+                         where o.Program.Value == "Court"
+                         select o).Count();
+
+            var smart = (from o in clients
+                         where o.Program.Value == "SMART"
+                         select o).Count();
+
+            var DVU = (from o in clients
+                         where o.Program.Value == "DVU"
+                         select o).Count();
+
+            var MCFD = (from o in clients
+                       where o.Program.Value == "MCFD"
+                       select o).Count();
+
+            // Get count of gender statistics for report.
+            var female = (from o in clients
+                          where o.gender == 'f'
+                          select o).Count();
+
+            var male = (from o in clients
+                          where o.gender == 'm'
+                          select o).Count();
+
+            var trans = (from o in clients
+                          where o.gender == 't'
+                          select o).Count();
+
+            // Get age range statistics for report.
+            var adult = (from o in clients
+                         where o.Age.Value == "Adult>24<65"
+                         select o).Count();
+
+            var youthA = (from o in clients
+                         where o.Age.Value == "Youth>12<19"
+                         select o).Count();
+
+            var youthB = (from o in clients
+                         where o.Age.Value == "Youth>18<25"
+                         select o).Count();
+
+            var child = (from o in clients
+                         where o.Age.Value == "Child<13"
+                         select o).Count();
+
+            var senior = (from o in clients
+                          where o.Age.Value == "Senior>64"
+                          select o).Count();
 
             return clients;
         }
