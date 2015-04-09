@@ -106,7 +106,7 @@ namespace assn2.Controllers
         // GET:
         [HttpGet]
         [Route("ClientAPI/getClients/{year}/{month}")]
-        public List<Client> getClientsForReport( string year, int month )
+        public Dictionary<string, Dictionary<string,string>> getClientsForReport( string year, int month )
         {
             List<Client> clients = new List<Client>();
             
@@ -122,74 +122,111 @@ namespace assn2.Controllers
             }
 
             // Get counts for open / closed / reopened files
-            var open = (from o in clients
+            var open = (from o in qry
                         where o.StatusofFile.Value == "Open"
                         select o).Count();
 
-            var closed = (from o in clients
+            var closed = (from o in qry
                           where o.StatusofFile.Value == "Closed"
                           select o).Count();
 
-            var reopened = (from o in clients
+            var reopened = (from o in qry
                             where o.StatusofFile.Value == "Reopened"
                             select o).Count();
 
             // Get count of program type for report.
-            var crisis = (from o in clients
+            var crisis = (from o in qry
                           where o.Program.Value == "Crisis"
                           select o).Count();
 
-            var court = (from o in clients
+            var court = (from o in qry
                          where o.Program.Value == "Court"
                          select o).Count();
 
-            var smart = (from o in clients
+            var smart = (from o in qry
                          where o.Program.Value == "SMART"
                          select o).Count();
 
-            var DVU = (from o in clients
+            var DVU = (from o in qry
                          where o.Program.Value == "DVU"
                          select o).Count();
 
-            var MCFD = (from o in clients
+            var MCFD = (from o in qry
                        where o.Program.Value == "MCFD"
                        select o).Count();
 
             // Get count of gender statistics for report.
-            var female = (from o in clients
-                          where o.gender == 'f'
-                          select o).Count();
+            //var female = (from o in qry
+            //              where o.gender == 'f'
+            //              select o).Count();
 
-            var male = (from o in clients
-                          where o.gender == 'm'
-                          select o).Count();
+            //var male = (from o in qry
+            //              where o.gender == 'm'
+            //              select o).Count();
 
-            var trans = (from o in clients
-                          where o.gender == 't'
-                          select o).Count();
+            //var trans = (from o in qry
+            //              where o.gender == 't'
+            //              select o).Count();
 
             // Get age range statistics for report.
-            var adult = (from o in clients
+            var adult = (from o in qry
                          where o.Age.Value == "Adult>24<65"
                          select o).Count();
 
-            var youthA = (from o in clients
+            var youthA = (from o in qry
                          where o.Age.Value == "Youth>12<19"
                          select o).Count();
 
-            var youthB = (from o in clients
+            var youthB = (from o in qry
                          where o.Age.Value == "Youth>18<25"
                          select o).Count();
 
-            var child = (from o in clients
+            var child = (from o in qry
                          where o.Age.Value == "Child<13"
                          select o).Count();
 
-            var senior = (from o in clients
+            var senior = (from o in qry
                           where o.Age.Value == "Senior>64"
                           select o).Count();
 
-            return clients;
+            // Generate dictionary's for all values, to be returned as JSON
+            var statuses = new Dictionary<string, string>();
+            statuses.Add("Open", open.ToString());
+            statuses.Add("Closed", closed.ToString());
+            statuses.Add("Reopened", reopened.ToString());
+
+            var programs = new Dictionary<string, string>();
+            programs.Add("Crisis", crisis.ToString());
+            programs.Add("Court", court.ToString());
+            programs.Add("SMART", smart.ToString());
+            programs.Add("DVU", DVU.ToString());
+            programs.Add("MCFD", MCFD.ToString());
+
+            var genders = new Dictionary<string, string>();
+            //genders.Add("Female", female.ToString());
+            //genders.Add("Male", male.ToString());
+            //genders.Add("Trans", trans.ToString());
+
+            var ages = new Dictionary<string, string>();
+            ages.Add("Adult", adult.ToString());
+            ages.Add("YouthA", youthA.ToString());
+            ages.Add("YouthB", youthB.ToString());
+            ages.Add("Child", child.ToString());
+            ages.Add("Senior", senior.ToString());
+
+            var dateInfo = new Dictionary<string, string>();
+            dateInfo.Add("Month", month.ToString());
+            dateInfo.Add("Year", year);
+
+            // final report construction.
+            var report = new Dictionary<string, Dictionary<string,string>>();
+            report.Add("DateInfo", dateInfo);
+            report.Add("Status", statuses);
+            report.Add("Programs", programs);
+            report.Add("Genders", genders);
+            report.Add("Ages", ages);
+
+            return report;
         }
 
         protected override void Dispose(bool disposing)
