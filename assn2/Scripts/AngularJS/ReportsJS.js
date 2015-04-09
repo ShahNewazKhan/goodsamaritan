@@ -19,10 +19,21 @@ app.config(['$httpProvider', function ($httpProvider) {
     });
 }]);
 
-app.controller('getCities',
+app.controller('generateReport',
 function ($scope, $http) {
     console.log("GetCities");
 
+    $scope.genReport = function () {
+
+        console.log("Gettng Reports");
+
+        $http.get("http://localhost:10397/api/ClientAPI/getClients/" + $scope.month + "/" + $scope.day)
+		.success(function (response) {
+		    console.log(response);
+		}).error(function (response) {
+		    console.log(response);
+		});
+    };
 
 });
 
@@ -35,6 +46,7 @@ function ($scope, $http) {
 		.success(function (response) {
 
 		    $scope.years = response;
+		    console.log(response[1]["Id"]);
 		    $scope.defaultYear = response[1]["Value"];
 
 		});
