@@ -11,7 +11,56 @@
                     <option ng-repeat="year in years" value="{{year.Value}}">{{year.Value}}</option>
                 </select>
             </p>
+
+            <p>
+                Risk Levels<br>
+                <select ng-model="defaultRiskLevels">
+                    <option ng-repeat="risk in riskLevels" value="{{risk.Value}}">{{risk.Value}}</option>
+                </select>
+            </p>
             
+            <p>
+                Crises<br>
+                <select ng-model="defaultCrises">
+                    <option ng-repeat="crisis in crises" value="{{crisis.Value}}">{{crisis.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Service<br>
+                <select ng-model="defaultService">
+                    <option ng-repeat="service in services" value="{{service.Value}}">{{service.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Service<br>
+                <select ng-model="defaultService">
+                    <option ng-repeat="service in services" value="{{service.Value}}">{{service.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Program<br>
+                <select ng-model="defaultProgram">
+                    <option ng-repeat="program in programs" value="{{program.Value}}">{{program.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Risk Status<br>
+                <select ng-model="defaultRiskStatus">
+                    <option ng-repeat="status in riskStatuses" value="{{status.Value}}">{{status.Value}}</option>
+                </select>
+            </p>
+
+            <p>
+                Referral Source<br>
+                <select ng-model="defaultReferralSource">
+                    <option ng-repeat="source in referralSources" value="{{source.Value}}">{{source.Value}}</option>
+                </select>
+            </p>
+
             <p>
                 Month<br>
                 <input type="text" name="desc" ng-model="month" required>

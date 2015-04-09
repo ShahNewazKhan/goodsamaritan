@@ -34,19 +34,104 @@ function ($scope, $http) {
 app.controller('getSmartEntities',
 function ($scope, $http) {
 
-    console.log("GetSmart");
-
     $scope.getsmart = function () {
-        $http.get("http://localhost:10397/api/cityofassaultapi")
+
+        $http.get("http://localhost:10397/api/FiscalYears")
 		.success(function (response) {
 
-		    console.log(response);
-		    $scope.Cities = response;
-		    $scope.defaultCity = response[1]["Value"];
+		    $scope.years = response;
+		    $scope.defaultYear = response[1]["Value"];
 
-		}).error(function (data, status, headers, config) {
-		    console.log(data);
 		});
+
+        $http.get("http://localhost:10397/api/RiskLevels")
+		.success(function (response) {
+
+		    $scope.riskLevels = response;
+		    $scope.defaultRiskLevels = response[1]["Value"];
+
+		});
+
+        $http.get("http://localhost:10397/api/Crises")
+		.success(function (response) {
+
+		    $scope.crises = response;
+		    $scope.defaultCrises = response[1]["Value"];
+
+		});
+
+        $http.get("http://localhost:10397/api/Services")
+		.success(function (response) {
+
+		    $scope.services = response;
+		    $scope.defaultService = response[1]["Value"];
+
+		});
+
+        $http.get("http://localhost:10397/api/Programs")
+		.success(function (response) {
+
+		    $scope.programs = response;
+		    $scope.defaultProgram = response[1]["Value"];
+
+		});
+
+        $http.get("http://localhost:10397/api/RiskStatuses")
+		.success(function (response) {
+
+		    $scope.riskStatuses = response;
+		    $scope.defaultRiskStatus = response[1]["Value"];
+
+		});
+
+        $http.get("http://localhost:10397/api/ReferralSources")
+		.success(function (response) {
+
+		    $scope.referralSources = response;
+		    $scope.defaultReferralSource = response[1]["Value"];
+
+		});
+
+        $http.get("http://localhost:10397/api/Incidents")
+       .success(function (response) {
+
+           $scope.incidents = response;
+           $scope.defaultIncident = response[1]["Value"];
+
+       });
+
+        $http.get("http://localhost:10397/api/AbuserRelationships")
+       .success(function (response) {
+
+           $scope.abuserRelationships = response;
+           $scope.defaultAbuser = response[1]["Value"];
+
+       });
+
+        $http.get("http://localhost:10397/api/VictimofIncidents")
+       .success(function (response) {
+
+           $scope.victimOfIncidents = response;
+           $scope.defaultVictimeOfIncident = response[1]["Value"];
+
+       });
+
+        $http.get("http://localhost:10397/api/FamilyViolenceFiles")
+       .success(function (response) {
+
+           $scope.family = response;
+           $scope.defaultVictimeOfIncident = response[1]["Value"];
+
+       });
+
+        $http.get("http://localhost:10397/api/cityofassaultapi")
+       .success(function (response) {
+
+           $scope.Cities = response;
+           $scope.defaultCity = response[1]["Value"];
+
+       });
+        
     };
 
     $scope.getsmart();
