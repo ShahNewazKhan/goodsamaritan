@@ -102,6 +102,21 @@ namespace assn2.Controllers
 
             return Ok(client);
         }
+        
+        // GET:
+        [HttpGet]
+        [Route("ClientAPI/getClients/{year}/{month}")]
+        public List<Client> getClientsForReport( string year, int month )
+        {
+            List<Client> clients = new List<Client>();
+            
+            var qry = from c in db.Clients
+                      where c.fisYear.Value == year
+                      where c.month == month
+                      select c;
+
+            return clients;
+        }
 
         protected override void Dispose(bool disposing)
         {
